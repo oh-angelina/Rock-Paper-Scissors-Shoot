@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock Paper Scissors</title>
-  <link rel="stylesheet" href="css/c02.css" />
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rock Paper Scissors Shoot!</title>
+  
+  <!--Import Bootstap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Link to local CSS -->
+  <link rel="stylesheet" href="css/rpss.css" />
+
 </head>
+
 <body>
-  <h1>Rock Paper</h1>
-  <div id="content">
-      <div class="message">Player 1 <span id="colors">We were unable to find your color choice. Please try again...</span></div>
+
+<section class="container-fluid padding" id="welcome">
+<div class="row padding text-center">
+	<header class="col-12">
+		<h1>Rock Paper Scissors</h1>
+	</header>
+	<h2 class="col-12" id="greeting"> Welcome to Rock Paper Scissors!</h2>
+</div>
+</section>
+
+<section class="game-section container-fluid padding">
+<div class="row padding text-center">
+  <div class="col-6" id="player-side">
+
+    <div><h2>Player 1 Name</h2></div>
+    <div class="score">
+      <p>Score</p>
+      <p id="player-score">0</p>
+    </div>
+    <ul class="plays player-plays">
+      <li><button type="button" class="btn btn-danger btn-lg">Rock</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg">Paper</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg">Scissors</button></li>
+    </ul>
   </div>
-  <script src="rock-paper-scissors.js"></script>
+
+  <div class="col-6" id="comp-side">
+        <div><h2>Computer</h2></div>
+
+    <div class="score">
+          <div class="score">
+      <p>Score</p>
+      <p id="comp-score">0</p>
+    </div>
+
+    <ul class="plays comp-plays">
+      <li><button type="button" class="btn btn-danger btn-lg">Rock</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg">Paper</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg">Scissors</button></li>
+    </ul>
+    
+ </div>    
+    
+  </div>
+  
+</div>
+</section>
+
+
+
+      <!--Link to Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      <!-- Link to local JS -->
+       <script src="js/rpss.js"></script>
+
 </body>
 </html>

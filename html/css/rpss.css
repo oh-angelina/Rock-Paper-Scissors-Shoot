@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #0d0461;
+	color: white;
+}
+.plays li {
+	display: block;
+	list-style: none;
+	margin: 2rem auto; 
+}
+.plays button {
+	background: #610904;
+	border: none;
+	margin: 1rem; 
+	margin-right: 1rem; 
+}
+.plays button:hover {
+	background: #7b231e;
+}
+.player-plays li {
+	text-align: left;
+}
+.comp-plays li {
+	text-align: right; 
+}

@@ -1,15 +1,18 @@
-/*var billAmount = 50;
+/*function greetOnLoad() {
+	var player1 = prompt("Hello Player 1! What is your name?");
+	var player2 =prompt("Hello Player2! What is your name?");
+	var myelement = document.getElementById("greeting");
+	greeting.innerHTML = "Welcome to the game" + player1 + " and " + player2 "!";
+}
+greetOnLoad(); */
 
-function gratuity() {
-	return billAmount*.2; 
+function greetOnLoad () {
+    var name = prompt("Hi! What's your name?");
+    var myelement = document.getElementById("greeting");
+    greeting.innerHTML= "Hello " + name + ", it's nice to meet you!";
 }
 
-function totalWithGrat(billAmount) {
-	return gratuity() + billAmount; 
-}
-
-console.log("Your total amount with 20% tip is " + totalWithGrat(billAmount)); */
-
+greetOnLoad();
 
 var weapons = ["rock", "paper", "scissors"];
 
