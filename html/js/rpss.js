@@ -6,102 +6,100 @@
 }
 greetOnLoad(); */
 
+
+// All variables listed here
+var name = "Player 1"
+var playerScore = 0;
+var compScore = 0;
+var playerPlay = null;
+var compPlay = null;
+var scoreUpdate = "";
+const player_score = document.getElementById("player-score");
+const comp_score = document.getElementById("comp-score");
+const playerRock = document.getElementById("player-rock");
+const playerPaper = document.getElementById("player-paper");
+const playerScissors = document.getElementById("player-scissors");
+const update = document.getElementById("greeting");
+
+
+// An array and functions that generate the computer's plays
+var weapons = ["rock", "paper", "scissors"];
+
+function hand() {
+	return weapons[parseInt(Math.random()*weapons.length) %3.5];
+}
+
+function compHand() {
+	compPlay = hand(); 
+	console.log(compPlay); 
+}
+
+// Captures Player 1's name
 function greetOnLoad () {
     var name = prompt("Hi! What's your name?");
     var myelement = document.getElementById("greeting");
-    greeting.innerHTML= "Hello " + name + ", it's nice to meet you!";
+    greeting.innerHTML= "Welcome to the tournament " + name;
 }
 
 greetOnLoad();
 
-var weapons = ["rock", "paper", "scissors"];
+// Player 1's play options as a trigger to begin the game
+playerRock.addEventListener("click", function(){
+	playerPlay = "rock"; 
+	console.log("You clicked rock")
+	game(); 
+})
 
-function player1wins() {
-	wins1++
+playerPaper.addEventListener("click", function(){
+	playerPlay = "paper"; 
+	console.log("You clicked paper")
+	game(); 
+})
+
+playerScissors.addEventListener("click", function(){
+	playerPlay = "scissors"; 
+	console.log("You clicked scissors")
+	game(); 
+})
+
+// The three possible game outcomes
+function win() {
+	playerScore++;
+	player_score.innerHTML = playerScore; 
+	scoreUpdate = "YOU WIN!";
+	update.innerHTML = scoreUpdate;
+	console.log("YOU WIN");
+}
+function lose() {
+	compScore++;
+	comp_score.innerHTML = compScore; 
+	scoreUpdate = "YOU LOSE!";
+	update.innerHTML = scoreUpdate;
+}
+function tie() {
+	scoreUpdate = "You tied. Play again.";
+	update.innerHTML = scoreUpdate;
 }
 
-function player2wins() {
-	wins2++
-}
+// Determines who wins the game
+function game() {
+	compHand(); 
+	switch (playerPlay + compPlay) {
+		case "rockscissors":
+		case "paperrock":
+		case "scissorspaper":
+			win();
+			break;
+		case "rockpaper":
+		case "scissorsrock":
+		case "paperscissors":
+			lose();
+			break;
+		case "rockrock":
+		case "scissorsscissors":
+		case "paperpaper":
+			tie();
+			break;
 
-var wins1 = 0;
-var wins2 = 0; 
-
-function hand() {
-	return weapons[parseInt(Math.random()*weapons.length) %3];
-}
-
-function test() {
-
-	if (plays1[plays]=="rock" && plays2[plays]=="rock") {
-		return("Both players played rock, there is a tie.");
-
-	 } else if (plays1[plays]=="rock" && plays2[plays]=="paper") {
-	 	++wins2;
-	 	return("Player two is the winner of this round.");
-
-	 } else if (plays1[plays]=="rock" && plays2[plays]=="scissors") {
-	 	++wins1;
-	 	return("Player one is the winner of this round.");
-	
-
-	} else if (plays1[plays]=="paper" && plays2[plays]=="paper") {
-		return("Both players played paper, there is a tie.");
-
-	} else if (plays1[plays]==="paper" && plays2[plays]=="scissors") {
-		++wins2;
-	 	return("Player two is the winner of this round.");
-
-	} else if (plays1[plays]==="paper" && plays2[plays]=="rock") {
-		++wins1;
-		return("Player one is the winner of this round.");
-
-
-	} else if (plays1[plays]=="scissors" && plays2[plays]=="scissors") {
-		return("Both players played scissors, there is a tie");
-
-	 }  else if (plays1[plays]==="scissors" && plays2[plays]==="paper") {
-	 	++wins1;
-	 	return("Player one is the winner of this round");
-
-	 } else if (plays1[plays]==="scissors" && plays2[plays]=="rock") {
-	 	++wins2;
-	 	return("Player two is the winner of this round");
-
-	} else {
-		return("there was an error");
 	}
-
 }
-
-	
-plays1=[];
-plays2=[];
-
-
-for(var plays=0; plays<=50; plays++) {
-
-		plays1.push(hand()); 
-
-		plays2.push(hand()); 
-
-		console.log("Player1 played " + plays1[plays] + " and Player 2 played " + plays2[plays]); 
-
-		console.log(test());
-
-		console.log("Player1 has a score of: " + wins1 + " and Player2 has a score of: " + wins2 + ".");
-
-		if (wins1 == 3 || wins2 ==3) { 
-		break; 
-  		}
-
-}
-
-
-if(wins1>wins2) {
-	console.log("The winner is player1" ); 
-} else if(wins2>wins1) {
-	console.log("The winner is player2" ); 
-} else {
-console.log("There was an error" ); 
-} 
