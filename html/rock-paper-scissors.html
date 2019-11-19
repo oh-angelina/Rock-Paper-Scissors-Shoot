@@ -29,11 +29,13 @@
 <div class="row padding text-center">
   <div class="col-6" id="player-side">
 
-    <div><h3>Player 1</h2></div>
+    <div class="side">
+      <h3>Player 1</h2>
     <div class="score">
       <p>Score</p>
       <p id="player-score">0</p>
     </div>
+  </div>
     <ul class="plays player-plays">
       <li><button type="button" class="btn btn-danger btn-lg" id="player-rock">Rock</button></li>
       <li><button type="button" class="btn btn-danger btn-lg" id="player-paper">Paper</button></li>
@@ -42,14 +44,13 @@
   </div>
 
   <div class="col-6" id="comp-side">
-        <div><h3>Computer</h2></div>
-
-    <div class="score">
-          <div class="score">
-      <p>Score</p>
-      <p id="comp-score">0</p>
-    </div>
-
+     <div class="side">
+        <h3>Computer</h2>
+        <div class="score">
+          <p>Score</p>
+          <p id="comp-score">0</p>
+        </div>
+      </div>
     <ul class="plays comp-plays">
       <li><button type="button" class="btn btn-danger btn-lg" id ="comp-rock">Rock</button></li>
       <li><button type="button" class="btn btn-danger btn-lg" id ="comp-paper">Paper</button></li>
