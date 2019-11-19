@@ -1,14 +1,6 @@
-/*function greetOnLoad() {
-	var player1 = prompt("Hello Player 1! What is your name?");
-	var player2 =prompt("Hello Player2! What is your name?");
-	var myelement = document.getElementById("greeting");
-	greeting.innerHTML = "Welcome to the game" + player1 + " and " + player2 "!";
-}
-greetOnLoad(); */
-
 
 // All variables listed here
-var name = "Player 1"
+var name = "Player 1";
 var playerScore = 0;
 var compScore = 0;
 var playerPlay = null;
@@ -19,6 +11,9 @@ const comp_score = document.getElementById("comp-score");
 const playerRock = document.getElementById("player-rock");
 const playerPaper = document.getElementById("player-paper");
 const playerScissors = document.getElementById("player-scissors");
+var compRock = document.getElementById("comp-rock");
+var compPaper = document.getElementById("comp-paper");
+var compScissors = document.getElementById("comp-scissors");
 const update = document.getElementById("greeting");
 
 
@@ -31,34 +26,51 @@ function hand() {
 
 function compHand() {
 	compPlay = hand(); 
-	console.log(compPlay); 
 }
 
-// Captures Player 1's name
+function glow() {
+	if (compPlay=="rock") {
+		compRock.classList.add("green");
+	} else if (compPlay=="paper") {
+		compPaper.classList.add("green");
+	} else {
+		compScissors.classList.add("green");
+	} 
+
+	setTimeout(function () { 
+    $(compRock).removeClass("green");
+	}, 500);
+	setTimeout(function () { 
+    $(compPaper).removeClass("green");
+	}, 500);
+	setTimeout(function () { 
+    $(compScissors).removeClass("green");
+	}, 500);
+}
+
+/*// Captures Player 1's name
 function greetOnLoad () {
-    var name = prompt("Hi! What's your name?");
+    var name = ""; 
+    name = prompt("Hi! What's your name?");
     var myelement = document.getElementById("greeting");
     greeting.innerHTML= "Welcome to the tournament " + name;
 }
 
-greetOnLoad();
+greetOnLoad();*/
 
 // Player 1's play options as a trigger to begin the game
 playerRock.addEventListener("click", function(){
 	playerPlay = "rock"; 
-	console.log("You clicked rock")
 	game(); 
 })
 
 playerPaper.addEventListener("click", function(){
 	playerPlay = "paper"; 
-	console.log("You clicked paper")
 	game(); 
 })
 
 playerScissors.addEventListener("click", function(){
 	playerPlay = "scissors"; 
-	console.log("You clicked scissors")
 	game(); 
 })
 
@@ -68,13 +80,11 @@ function win() {
 	player_score.innerHTML = playerScore; 
 	scoreUpdate = "YOU WIN!";
 	update.innerHTML = scoreUpdate;
-	console.log("YOU WIN");
 }
 function lose() {
 	compScore++;
 	comp_score.innerHTML = compScore; 
 	scoreUpdate = "YOU LOSE!";
-	update.innerHTML = scoreUpdate;
 }
 function tie() {
 	scoreUpdate = "You tied. Play again.";
@@ -84,6 +94,7 @@ function tie() {
 // Determines who wins the game
 function game() {
 	compHand(); 
+	glow();
 	switch (playerPlay + compPlay) {
 		case "rockscissors":
 		case "paperrock":
@@ -100,6 +111,5 @@ function game() {
 		case "paperpaper":
 			tie();
 			break;
-
 	}
 }

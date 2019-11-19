@@ -9,9 +9,6 @@
   <!--Import Bootstap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <!-- Link to local CSS -->
   <link rel="stylesheet" href="css/rpss.css" />
 
@@ -32,7 +29,7 @@
 <div class="row padding text-center">
   <div class="col-6" id="player-side">
 
-    <div><h2>Player 1 Name</h2></div>
+    <div><h3>Player 1</h2></div>
     <div class="score">
       <p>Score</p>
       <p id="player-score">0</p>
@@ -45,7 +42,7 @@
   </div>
 
   <div class="col-6" id="comp-side">
-        <div><h2>Computer</h2></div>
+        <div><h3>Computer</h2></div>
 
     <div class="score">
           <div class="score">
@@ -54,9 +51,9 @@
     </div>
 
     <ul class="plays comp-plays">
-      <li><button type="button" class="btn btn-danger btn-lg">Rock</button></li>
-      <li><button type="button" class="btn btn-danger btn-lg">Paper</button></li>
-      <li><button type="button" class="btn btn-danger btn-lg">Scissors</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg" id ="comp-rock">Rock</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg" id ="comp-paper">Paper</button></li>
+      <li><button type="button" class="btn btn-danger btn-lg" id ="comp-scissors">Scissors</button></li>
     </ul>
     
  </div>    
