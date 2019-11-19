@@ -1,7 +1,7 @@
 # Rock-Paper-Scissors-Shoot
 JavaScript rendition of the children's game Rock Paper Scissors Shoot. 
 
-![Screenshot](https://raw.githubusercontent.com/oh-angelina/Rock-Paper-Scissors-Shoot/master//images/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/oh-angelina/Rock-Paper-Scissors-Shoot/master//images/rps.png)
 
 ### Hosted Version
 This web page is hosted on CodePen. [Link to the most current version can be found here](https://codepen.io/oh-angelina/full/ZEEjLOr)
